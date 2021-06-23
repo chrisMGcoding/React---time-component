@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import DemoComponent from './component/exemple';
 
 function App() {
+
+  let dateCourante = new Date();
+  let tempsJavaScript = dateCourante.getTime();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <DemoComponent/>
+        <div><p>le temps JS est de : {tempsJavaScript} milliseconde</p></div>
+        <div><p>le temps PHP est de : {tempsJavaScript/1000} seconde</p></div>
+        <div>
+          <p>la date pour les humains est : {dateCourante.getDate()}/{dateCourante.getMonth()}/{dateCourante.getFullYear()}</p>
+        </div>
       </header>
+      <footer>
+        <p>Un site de MolenGeek</p>
+      </footer>
     </div>
   );
 }
